@@ -21,7 +21,7 @@
             Silahkan masukan Nomor Induk Siswa Nasional (NISN) Anda, untuk melakukan pengecekan pengumuman
           </div>
           <div class="justify-center">
-            <Countdown end="July 8, 2022 08:00:00"></Countdown>
+            <Countdown end="July 8, 2023 08:00:00"></Countdown>
           </div>
 
         </v-row>
