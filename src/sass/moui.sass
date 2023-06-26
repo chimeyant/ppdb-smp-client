@@ -1,0 +1,102 @@
+.v-moui
+    &__card
+        &_top_corner
+            background: #FFFFFF
+            border-top-left-radius: 20px
+            border-top-right-radius: 20px
+            height: 20px
+
+.font-nunito
+    font-family: 'Nunito' !important
+
+.line-height-1
+    line-height: 1 !important
+
+.letter-space-1
+    letter-spacing: 1em !important
+
+.v-application .headline.letter-space-1
+    letter-spacing: 0.2em !important
+
+.v-application--is-ltr .v-data-footer__select .v-select
+    margin: 8px 0 8px 34px !important
+
+.user-select-none
+    user-select: none
+
+.position-absolute
+    position: absolute
+    z-index: 99
+
+    &.fit-content
+        left: 0
+        top: 0
+        height: 100%
+        width: 100%
+
+.position-fixed
+    position: fixed
+    z-index: 99
+
+.upload-interactive
+    height: 64px
+    min-width: 360px
+    top: calc( 100vh - 72px )
+    right: 8px
+
+main.v-content.with-backdrop
+    &::before
+        background: rgba(33, 33, 33, 0.48)
+        position: absolute
+        content: ''
+        display: block
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        z-index: 0
+
+    > .v-responsive__content
+        position: relative
+        z-index: 1
+
+.v-responsive.with-backdrop
+    > .v-responsive__content
+        &::before
+            background: rgba(54, 54, 54, 0.48)
+            position: absolute
+            content: ''
+            display: block
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            z-index: 0
+
+        > div
+            position: relative
+            z-index: 1
+
+.v-toolbar.with-shadow
+    &::after
+        bottom: -1px
+        content: ""
+        height: 1px
+        pointer-events: none
+        position: absolute
+        left: 0
+        right: 0
+        width: 100%
+        background: rgba(17,17,17,.06)
+
+.v-toolbar.with-top-border
+    border-top-left-radius: 4px
+    border-top-right-radius: 4px
+
+.v-navigation-drawer
+    &__border
+        display: none
+
+    &__content
+        > .v-responsive > .v-responsive__content
+            background-color: #FAFAFA

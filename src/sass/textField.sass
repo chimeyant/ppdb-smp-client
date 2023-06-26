@@ -1,0 +1,28 @@
+.v-text-field
+    > .v-input__control 
+        > .v-input__slot
+            &:before
+                border-color: rgba(0,0,0,0.18) !important
+                border-width: 1px 0 0 0
+            
+            &:after
+                border-width: 0.5px 0 0.5px 0 !important
+
+    .v-input__prepend-inner
+        padding-right: 8px
+    
+    &--outlined fieldset
+        border-width: 0.5px
+        
+    &--outlined.v-input--is-focused fieldset, 
+    &--outlined.v-input--has-state fieldset
+        border-width: 0.5px
+    
+    &.headline
+        label
+            font-size: 1.5rem !important
+
+.v-application--is-ltr 
+    .v-text-field 
+        .v-input__prepend-inner
+            padding-right: 12px !important

@@ -1,0 +1,152 @@
+.session-wrapper
+    position: relative
+    height: 100%
+
+.session-left
+    background-image: url("/static/img/login.jpg")
+    background-size: auto auto
+    background-size: cover
+    text-align: center
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 600px
+    height: 100%
+    overflow: hidden
+    top: 0
+    bottom: 0
+
+    .slick-slider
+        width: 31.25rem
+
+    .slick-dots li
+        &.slick-active, button:before
+            color: #FFFFFF
+
+.session-right
+    margin-left: 31.25rem
+
+    .session-table-cell
+        padding-top: 5rem
+
+    .session-content
+        max-width: 31.25rem
+        margin: 0 auto
+
+.slider-content
+    img
+        border-top: 4px solid #FFFFFF
+        border-bottom: 4px solid #FFFFFF
+        border-left: 4px solid #FFFFFF
+        border-right: 4px solid #FFFFFF
+        display: inline-block !important
+
+p
+    font-weight: 600
+    font-size: 1.125rem
+    line-height: 1.6
+
+*
+    color: #FFFFFF
+
+.session-social-links
+    *
+        color: #FFFFFF
+
+ul li
+    margin-bottom: 1.25rem
+    margin-right: 0.875rem
+    display: inline-block
+
+    &:last-child
+        margin-right: 0
+
+.session-icon
+    border-radius: 4px
+    height: 40px
+    width: 40px
+    line-height: 40px
+    display: inline-block
+    text-align: center
+
+.bg-sc, .lock-screen-wrapper, .session-banner
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    bottom: 0
+    left: 0
+    overflow: auto
+    padding: 4rem 1rem
+    position: fixed
+    right: 0
+    top: 0
+    height: 100vh
+
+.lock-screen-wrapper
+    background-image: url("/static/img/lock-bg.png")
+
+.lock-screen-block
+    .v-form .theme--light.v-label
+        color: #FFFFFF !important
+        .v-text-field > .v-input__control > .v-input__slot
+            &:before, &:after
+                border-color: #FFFFFF
+
+.pricing-wrapper .app-card-content h2
+    border-bottom: 1px solid #DDE6F3
+    padding: 1.25rem
+
+.list-group-flush
+    .list-group-item, li
+        border-bottom: 1px solid #DDE6F3
+        padding: 0.9375rem 0
+
+    .list-group-item:last-child, li:last-child
+        border: none
+
+.session-banner
+    background-image: url("/static/img/login-signup2.png")
+
+.session-block
+    background-color: #FFFFFF
+    padding: 3.125rem
+    border-radius: 10px
+    box-shadow: 0 12px 34px 0 rgba(0, 0, 0, 0.5)
+
+.log-link a
+    text-decoration: none
+    color: #A5A7B2
+
+    &:hover
+        color: #5D92F4
+
+.block-center
+    -webkit-transform: translate3d(0%, 50%, 0)
+    transform: translate3d(0%, 50%, 0)
+
+@media (max-width: 1200px)
+.session-wrapper
+    .session-left .slick-slider
+        width: 25rem
+
+    .session-right
+        margin-left: 25rem
+
+@media (max-width: 1000px)
+.session-wrapper .session-right .session-content
+    max-width: 18.75rem !important
+
+@media (max-width: 800px)
+.session-wrapper
+    .session-left
+        display: none
+
+    .session-right
+        margin-left: 0
+
+    .session-table-cell
+        padding: 1.875rem 1.875rem 0
+
+    .session-content
+        max-width: 27.5rem !important
