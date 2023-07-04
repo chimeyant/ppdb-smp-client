@@ -104,7 +104,7 @@ router.beforeEach((to, from, next) => {
   } else {
     if (to.name === "login" && Auth.check) {
       if (Auth.user.authent == "peserta") {
-        next({ name: "dashboard-peserta" });
+        next({ name: "dashboard" });
       } else {
         next({ name: "dashboard" });
       }

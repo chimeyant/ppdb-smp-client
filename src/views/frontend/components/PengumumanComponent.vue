@@ -250,7 +250,7 @@ export default {
       newLogoSMP.src = "/images/logo-smp.png";
 
       let ttd = new Image();
-      ttd.src = "/images/ttd.png";
+      ttd.src = "/images/ttd.jpeg";
 
       var qr = new QRious({
         value: this.record.nopend,
@@ -294,135 +294,149 @@ export default {
       doc.setFontStyle("bold");
       doc.text("Surat Keputusan", 85, 65);
       doc.text(65, 70, "Kepala UPT SMP Negeri 2 Tigaraksa");
-      doc.text(60, 75, "Nomor : 421.3/421.5/410/VII/SMPN2-TGRS/2022");
+      doc.text(60, 75, "Nomor : 421.3/421.5/184/VII/SMPN2-TGRS/2023");
       doc.text("Tentang", 95, 80);
       doc.text(53, 85, "Hasil Seleksi Penerimaan Peserta Didik Baru (PPDB)");
-      doc.text(50, 90, "Jalur Prestasi Akademik dan Non Akademik");
-      doc.text(80, 95, "Tahun Pelajaran 2022/2023");
+      doc.text(50, 90, "Jalur Zonasi, Afirmasi, Perpindahan Tugas Orang Tua ");
+      doc.text(80, 95, "Tahun Pelajaran 2023/2024");
       doc.setFontStyle("regular");
       doc.text(75, 110, "Kepala UPT SMP Negeri 2 Tigaraksa");
       doc.setFontStyle("bold");
-      doc.text("Menimbang", 15, 120);
+      doc.text("Menimbang :", 15, 120);
       doc.setFontStyle("regular");
       doc.text(
-        "a. Bahwa setelah melalui tahapan pendaftaran dan verifikasi data",
+        "a. Bahwa setelah melalui tahapan pendaftaran dan verifikasi data Penerimaan Peserta",
         50,
         120
       );
       doc.text(
-        "Penerimaan Peserta Didik Baru (PPDB) di UPT SMP Negeri 2 ",
+        "Didik Baru (PPDB) di UPT SMP Neger 2 Tigaraksa, Perlu dilakukan seleksi; ",
         54,
         125
       );
-      doc.text("Tigaraksa, perlu dilakukan seleksi;", 54, 130);
-
       doc.text(
-        "b. Bahwa berdasarkan pertimbangan sebagaimana dimaksud pada ",
+        "b. Bahwa Berdasarkan Pertimbangan Sebagaimana Dimaksud Pada Huruf a Diatas, Perlu ",
         50,
+        130
+      );
+      doc.text(
+        "Menetapkan Keputusan Kepala UPT SMP Negeri 2 Tigaraksa Tentang Hasil Seleksi",
+        54,
         135
       );
       doc.text(
-        "huruf a diatas, perlu menetapkan Keputusan Kepala UPT SMP ",
+        "Penerimaan Peserta Didik Baru (PPDB) Jalur Zonasi, Afirmasi, Perpidahan Tugas Orang ",
         54,
         140
       );
       doc.text(
-        "Negeri 2 Tigaraksa tentang Hasil Seleksi Penerimaan Peserta Didik ",
+        "Tua dan Jalur Prestasi (Akademik dan Non Akademik) Tahun Pelajaran 2023/2024.",
         54,
         145
       );
-      doc.text("Baru (PPDB) Jalur Prestasi Tahun Pelajaran 2022/2023", 54, 150);
 
       doc.setFontStyle("bold");
       doc.text("Mengingat :", 15, 155);
       doc.setFontStyle("regular");
       doc.text(
-        "Rapat Pleno seleksi penetapan Penerimaan Peserta Didik Baru (PPDB) jalur Prestasi di ",
+        "Rapat Pleno Seleksi Penetapan Penerimaan Peserta Didik Baru (PPDB) Jalur Zonasi,",
         50,
         155
       );
       doc.text(
-        "UPT SMP Negeri 2 Tigaraksa yang dilaksanakan pada tanggal 07 Juli 2022",
+        "Afirmasi, Perpindahan Tugas Orang Tua dan Prestasi (Akademik dan non Akademik) di UPT",
         50,
         160
       );
+      doc.text(
+        "SMP Negeri 2 Tigaraksa yang dilaksanakan pada tanggal 05 Juli 2023.",
+        50,
+        165
+      );
 
       doc.setFontStyle("bold");
-      doc.text("Memutuskan", 50, 170);
+      doc.text("Memutuskan", 50, 175);
 
-      doc.text("Menetapkan :", 15, 180);
+      doc.text("Menetapkan :", 15, 185);
       doc.setFontStyle("regular");
-      doc.text("Nomor Pendaftaran", 50, 180);
-      doc.text(" : ", 100, 180);
-      doc.text(this.record.nopend, 105, 180);
-      doc.text("Nama", 50, 185);
-      doc.text(" : ", 100, 185);
-      doc.text(this.record.nama, 105, 185);
-      doc.text("Tempat/Tgl.Lahir", 50, 190);
+      doc.text("Nomor Pendaftaran", 50, 190);
       doc.text(" : ", 100, 190);
-      doc.text(this.record.ttl, 105, 190);
-      doc.text("NISN", 50, 195);
+      doc.text(this.record.nopend, 105, 190);
+      doc.text("Nama", 50, 195);
       doc.text(" : ", 100, 195);
-      doc.text(this.record.nisn, 105, 195);
-      doc.text("Asal Sekolah", 50, 200);
+      doc.text(this.record.nama, 105, 195);
+      doc.text("Tempat/Tgl.Lahir", 50, 200);
       doc.text(" : ", 100, 200);
-      doc.text(this.record.asal_sekolah, 105, 200);
-      doc.text("Jalur Pendaftaran", 50, 205);
+      doc.text(this.record.ttl, 105, 200);
+      doc.text("NISN", 50, 205);
       doc.text(" : ", 100, 205);
-      doc.text(this.record.jalur, 105, 205);
-      doc.text("Dinyatakan", 50, 210);
+      doc.text(this.record.nisn, 105, 205);
+      doc.text("Asal Sekolah", 50, 210);
       doc.text(" : ", 100, 210);
+      doc.text(this.record.asal_sekolah, 105, 210);
+      doc.text("Jalur Pendaftaran", 50, 215);
+      doc.text(" : ", 100, 215);
+      doc.text(this.record.jalur, 105, 215);
+      doc.text("Dinyatakan", 50, 225);
+      doc.text(" : ", 100, 225);
       doc.setFontStyle("bold");
       doc.text(
         this.record.status_lulus ? "DITERIMA" : "BELUM DITERIMA",
         105,
-        210
+        225
       );
       doc.setFontStyle("regular");
       doc.text(
-        "Sebagai Peserta Didik Baru Kelas 7 di UPT SMP Negeri 2 Tigaraksa ",
+        "Sebagai Peserta Didik Baru kelas " +
+          this.record.kelas +
+          " di UPT SMP Negeri 2 Tigaraksa Tahun Pelajaran",
         50,
-        220
+        235
       );
-      doc.text("pelajaran 2022/2023. ", 50, 225);
+      doc.text("2023/2024. ", 50, 240);
+
       doc.text(
         "Surat Keputusan ini di putuskan pada tanggal ditetapkan.",
         15,
-        235
+        250
       );
 
-      doc.text("Ditetapkan di", 100, 245);
-      doc.text(": Tigaraksa ", 130, 245);
-      doc.text("Pada Tanggal", 100, 250);
-      doc.text(": 08 Juli 2022 ", 130, 250);
+      doc.text("Ditetapkan di", 130, 260);
+      doc.text(": Tigaraksa ", 160, 260);
+      doc.text("Pada Tanggal", 130, 265);
+      doc.text(": 05 Juli 2023 ", 160, 265);
+      doc.addImage(ttd, "JPEG", 115, 265, 40, 30);
       doc.setFontStyle("bold");
-      doc.text("Kepala Sekolah,", 100, 255);
-      doc.text("Wawan Setiawan.M.Pd", 100, 290);
-      doc.addImage(ttd, "JPEG", 100, 260, 25, 25);
-      doc.text("NIP. 196305261984121002", 100, 295);
-
-      doc.text("Catatan :", 15, 305);
+      doc.text("Plt. Kepala Sekolah,", 130, 270);
+      doc.text("JARKASIH, S.Pd", 130, 290);
       doc.setFontStyle("regular");
+      doc.text("Pembina Utama Muda, IV/c", 130, 295);
+      doc.text("NIP. 196411281988031010", 130, 300);
+
+      doc.text("Catatan :", 15, 310);
+      doc.setFontStyle("regular");
+      doc.setFontSize("10");
+
       doc.text(
-        "1. Bagi yang diterima, dipersilahkan untuk lapor diri/daftar ulang, dengan membawa print out tanda bukti",
+        "1. Bagi yang diterima, dipersilahkan untuk lapor diri/daftar ulang, dengan membawa print out tanda bukti DITERIMA;",
         15,
-        310
-      );
-      doc.text(
-        "DITERIMA dan tanda bukti hasil verifikasi data/berkas",
-        19,
         315
       );
       doc.text(
-        "2.Waktu pelaksanaan lapor diri/daftar ulang, tanggl 08 Juli 2022, mulai pk. 08.00 s.d 14.00 di UPT SMP ",
+        "2. Waktu pelaksanaan lapor diri/daftar ulang, tanggl 06-08 Juli 2023, mulai pk. 08.00 s.d 14.00 di UPT SMP Negeri 2 Tigaraksa;",
         15,
         320
       );
-      doc.text("Negeri 2 Tigaraksa.", 19, 325);
       doc.text(
-        "3.Waktu daftar ulang siswa wajib hadir didampingi orang tua/wali",
+        "3. Saat daftar ulang siswa wajib hadir didampingi orang tua/wali;",
         15,
-        330
+        325
+      );
+      doc.text("4. Membawa Materai 10.000 2 Lembar;", 15, 330);
+      doc.text(
+        "5. Apabila tidak melakukan lapor diri / Daftar Ulang sampai dengan tanggal yg telah ditentukan dianggap mengundurkan diri.",
+        15,
+        335
       );
 
       /*
