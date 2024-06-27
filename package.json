@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && export NODE_OPTIONS=--max-old-space-size=2048 && vue-cli-service build"
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider  && vue-cli-service build"
   },
   "dependencies": {
     "@tinymce/tinymce-vue": "^3.2.8",
