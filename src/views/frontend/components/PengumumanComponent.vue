@@ -376,7 +376,7 @@ export default {
       doc.text(
         this.record.jalur == "Zonasi" ? this.record.jarak : "-",
         105,
-        220
+        218
       );
       doc.text("Dinyatakan", 50, 225);
       doc.text(" : ", 100, 225);
