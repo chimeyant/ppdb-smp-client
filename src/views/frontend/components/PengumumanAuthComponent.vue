@@ -375,6 +375,11 @@ export default {
       doc.text("Jalur Pendaftaran", 50, 215);
       doc.text(" : ", 100, 215);
       doc.text(this.record.jalur, 105, 215);
+      doc.text(
+        this.record.jalur == "Zonasi" ? this.record.jarak : "-",
+        105,
+        220
+      );
       doc.text("Dinyatakan", 50, 225);
       doc.text(" : ", 100, 225);
       doc.setFontStyle("bold");
