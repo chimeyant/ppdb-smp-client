@@ -7,6 +7,7 @@ import Home from "../views/frontend/Home.vue";
 import Pagu from "../views/frontend/Pagu.vue";
 import DaftarPeserta from "../views/frontend/DaftarPeserta.vue";
 import Pengumuman from "../views/frontend/Pengumuman.vue";
+import PengumumanAuth from "../views/frontend/PengumumanAuth.vue"
 import Registrasi from "../views/frontend/Registrasi.vue";
 import Login from "../views/frontend/Login.vue";
 
@@ -39,7 +40,11 @@ const routes = [
         name: "pengumuman",
         component: Pengumuman,
       },
-
+      {
+        path: "pengumuman-auth",
+        name: "pengumuman-auth",
+        component: PengumumanAuth,
+      },
       {
         path: "login",
         name: "login",

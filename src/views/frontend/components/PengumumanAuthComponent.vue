@@ -155,8 +155,8 @@
 
   </v-container>
 </template>
-
-<script>
+  
+  <script>
 import jsPDF from "jspdf";
 import QRious from "qrious";
 import { mapState, mapActions } from "vuex";
@@ -222,7 +222,9 @@ export default {
 
         let {
           data: { status, message, data },
-        } = await this.http.post("pengumuman", { nisn: this.record.nisn });
+        } = await this.http.post("pengumuman-by-auth", {
+          nisn: this.record.nisn,
+        });
         if (!status) {
           this.snackbar.color = "red";
           this.snackbar.text = message;
@@ -446,219 +448,219 @@ export default {
       );
 
       /*
-
-      doc.setLineWidth(0.4);
-      doc.line(185, 19, 200, 19);
-      doc.line(185, 23, 200, 23);
-      doc.line(185, 19, 185, 33);
-      doc.line(200, 19, 200, 33);
-      doc.line(185, 33, 200, 33);
-      doc.text(186, 22, "LEMBAR");
-      doc.setFontStyle("bold");
-      doc.setFontSize(15);
-      doc.text(191, 30, "1");
-      doc.setLineWidth(0.4);
-      doc.line(10, 35, 200, 35);
-      //Area Kiri
-
-      //data peserta
-      doc.setFontSize(9);
-      doc.setFontStyle("regular");
-      doc.text(20, 45, "No. Daftar ");
-      doc.text(50, 45, ":");
-      doc.setFontStyle("bold");
-      doc.text(52, 45, this.peserta.nomor_register);
-      doc.setFontStyle("regular");
-      doc.text(20, 50, "Nama Lengkap");
-      doc.text(50, 50, ":");
-      doc.text(52, 50, this.peserta.nama);
-      doc.text(20, 55, "Asal Sekolah");
-      doc.text(50, 55, ":");
-      doc.text(52, 55, this.peserta.nama_sekolah_asal);
-      doc.text(20, 60, "Daerah Asal");
-      doc.text(50, 60, ":");
-      doc.text(52, 60, this.peserta.daerah_asal);
-
-      doc.text(20, 75, "Pilihan I");
-      doc.text(50, 75, ":");
-      doc.setFontStyle("bold");
-      doc.text(52, 75, this.peserta.pil1);
-      doc.setFontStyle("regular");
-
-      doc.text(20, 80, "Pilihan II");
-      doc.text(50, 80, ":");
-      doc.setFontStyle("bold");
-      if (this.peserta.pil2) {
-        doc.text(52, 80, this.peserta.pil2);
-      }
-
-      //Sisi Kanan
-      doc.setFontStyle("regular");
-      doc.text(110, 45, "Jenis Kelamin");
-      doc.text(135, 45, ":");
-      doc.text(
-        137,
-        45,
-        this.peserta.jenis_kelamin == "L" ? "Laki-laki" : "Perempuan"
-      );
-
-      doc.text(110, 50, "Tanggal Lahir");
-      doc.text(135, 50, ":");
-      doc.text(137, 50, this.peserta.tanggal_lahir);
-
-      doc.text(110, 75, "Lokasi Pendaftaran");
-      doc.text(135, 75, ":");
-      doc.setFontStyle("bold");
-      doc.text(137, 75, this.info.company);
-
-      doc.setFontStyle("regular");
-
-      doc.text(110, 80, "Waktu Pendaftaran");
-      doc.text(135, 80, ":");
-      doc.text(137, 80, this.peserta.waktu_pendaftaran);
-
-      doc.text(20, 90, this.info.alamat);
-
-      //Sisi Kiri
-      //doc.text(45, 105, "Panitia,");
-      //doc.text(20, 130, "Operator " + this.info.company);
-
-      //Sisi Kanan
-      doc.text(127, 100, "Banten,");
-      doc.text(127, 105, "Calon Peserta Didik,");
-      if (this.info.materai) {
-        doc.text(130, 115, "Materai 10000");
-      }
-      doc.text(127, 130, this.peserta.nama);
-
-      doc.setFontStyle("bold");
-
-      doc.text(10, 140, "Lembar 1 Untuk Sekolah");
-      doc.setFontStyle("regular");
-      doc.text(
-        10,
-        145,
-        "Informasi PPDB SMK Online 2022 kunjungi " + this.info.apps_url
-      );
-
-      doc.setLineDash([7, 3, 1, 3], 10);
-      doc.line(10, 150, 200, 150);
-      doc.setLineDash([0], 0);
-
-      //lembar 2
-      doc.addImage(newLogoProv, "JPEG", 10, 155, 15, 17);
-      doc.setFontSize(10);
-      doc.setFontStyle("bold");
-      doc.text(50, 160, "PEMERINTAH PROVINSI BANTEN");
-      doc.text(40, 165, "DINAS PENDIDIKAAN DAN KEBUDAYAAN");
-
-      doc.text(125, 160, "BUKTI PENDAFTARAN");
-      doc.setFontStyle("regular");
-      doc.text(125, 165, "PESERTA DIDIK SMK NEGERI");
-      doc.text(125, 170, "TAHUN PELAJARAN 2022/2023");
-      doc.setFontSize(9);
-      doc.setFontStyle("regular");
-      doc.text(30, 170, this.info.alamat);
-      doc.text(75, 31, "Banten");
-      doc.setLineWidth(0.4);
-      doc.line(185, 159, 200, 159);
-      doc.line(185, 163, 200, 163);
-      doc.line(185, 159, 185, 173);
-      doc.line(200, 159, 200, 173);
-      doc.line(185, 173, 200, 173);
-      doc.text(186, 162, "LEMBAR");
-      doc.setFontStyle("bold");
-      doc.setFontSize(15);
-      doc.text(191, 170, "2");
-      doc.setLineWidth(0.4);
-      doc.line(10, 175, 200, 175);
-
-      //Area Kiri
-
-      //data peserta
-      doc.setFontSize(9);
-      doc.setFontStyle("regular");
-      doc.text(20, 185, "No. Daftar ");
-      doc.text(50, 185, ":");
-      doc.setFontStyle("bold");
-      doc.text(52, 185, this.peserta.nomor_register);
-      doc.setFontStyle("regular");
-      doc.text(20, 190, "Nama Lengkap");
-      doc.text(50, 190, ":");
-      doc.text(52, 190, this.peserta.nama);
-      doc.text(20, 195, "Asal Sekolah");
-      doc.text(50, 195, ":");
-      doc.text(52, 195, this.peserta.nama_sekolah_asal);
-      doc.text(20, 200, "Daerah Asal");
-      doc.text(50, 200, ":");
-      doc.text(52, 200, this.peserta.daerah_asal);
-
-      doc.text(20, 215, "Pilihan I");
-      doc.text(50, 215, ":");
-      doc.setFontStyle("bold");
-      doc.text(52, 215, this.peserta.pil1);
-      doc.setFontStyle("regular");
-
-      doc.text(20, 220, "Pilihan II");
-      doc.text(50, 220, ":");
-      doc.setFontStyle("bold");
-      if (this.peserta.pil2) {
-        doc.text(52, 220, this.peserta.pil2);
-      }
-
-      doc.setFontStyle("regular");
-      doc.text(110, 185, "Jenis Kelamin");
-      doc.text(135, 185, ":");
-      doc.text(
-        137,
-        185,
-        this.peserta.jenis_kelamin == "L" ? "Laki-laki" : "Perempuan"
-      );
-
-      doc.text(110, 190, "Tanggal Lahir");
-      doc.text(135, 190, ":");
-      doc.text(137, 190, this.peserta.tanggal_lahir);
-
-      doc.text(110, 215, "Lokasi Pendaftaran");
-      doc.text(135, 215, ":");
-      doc.setFontStyle("bold");
-      doc.text(137, 215, this.info.company);
-
-      doc.setFontStyle("regular");
-
-      doc.text(110, 220, "Waktu Pendaftaran");
-      doc.text(135, 220, ":");
-      doc.text(137, 220, this.peserta.waktu_pendaftaran);
-
-      doc.text(
-        20,
-        230,
-        "Saya telah mengisi data di atas dengan benar dan siap untuk didiskualifikasi jika terbukti terdapat kecurangan atau rekayasa data"
-      );
-
-      //Sisi Kiri
-      //doc.text(45, 245, "Panitia,");
-      //doc.text(20, 270, "Operator " + this.info.company);
-
-      //Sisi Kanan
-      doc.text(127, 240, "Banten,");
-      doc.text(127, 245, "Calon Peserta Didik,");
-      //doc.text(127, 270, this.peserta.nama);
-      if (this.info.materai) {
-        doc.text(130, 260, "Materai 10000");
-      }
-      doc.text(127, 275, this.peserta.nama);
-
-      doc.setFontStyle("bold");
-
-      doc.text(10, 285, "Lembar 2 Untuk Calon Siswa");
-      doc.setFontStyle("regular");
-      doc.text(
-        10,
-        290,
-        "Informasi PPDB SMK Online 2022 kunjungi " + this.info.apps_url
-      );
-      */
+  
+        doc.setLineWidth(0.4);
+        doc.line(185, 19, 200, 19);
+        doc.line(185, 23, 200, 23);
+        doc.line(185, 19, 185, 33);
+        doc.line(200, 19, 200, 33);
+        doc.line(185, 33, 200, 33);
+        doc.text(186, 22, "LEMBAR");
+        doc.setFontStyle("bold");
+        doc.setFontSize(15);
+        doc.text(191, 30, "1");
+        doc.setLineWidth(0.4);
+        doc.line(10, 35, 200, 35);
+        //Area Kiri
+  
+        //data peserta
+        doc.setFontSize(9);
+        doc.setFontStyle("regular");
+        doc.text(20, 45, "No. Daftar ");
+        doc.text(50, 45, ":");
+        doc.setFontStyle("bold");
+        doc.text(52, 45, this.peserta.nomor_register);
+        doc.setFontStyle("regular");
+        doc.text(20, 50, "Nama Lengkap");
+        doc.text(50, 50, ":");
+        doc.text(52, 50, this.peserta.nama);
+        doc.text(20, 55, "Asal Sekolah");
+        doc.text(50, 55, ":");
+        doc.text(52, 55, this.peserta.nama_sekolah_asal);
+        doc.text(20, 60, "Daerah Asal");
+        doc.text(50, 60, ":");
+        doc.text(52, 60, this.peserta.daerah_asal);
+  
+        doc.text(20, 75, "Pilihan I");
+        doc.text(50, 75, ":");
+        doc.setFontStyle("bold");
+        doc.text(52, 75, this.peserta.pil1);
+        doc.setFontStyle("regular");
+  
+        doc.text(20, 80, "Pilihan II");
+        doc.text(50, 80, ":");
+        doc.setFontStyle("bold");
+        if (this.peserta.pil2) {
+          doc.text(52, 80, this.peserta.pil2);
+        }
+  
+        //Sisi Kanan
+        doc.setFontStyle("regular");
+        doc.text(110, 45, "Jenis Kelamin");
+        doc.text(135, 45, ":");
+        doc.text(
+          137,
+          45,
+          this.peserta.jenis_kelamin == "L" ? "Laki-laki" : "Perempuan"
+        );
+  
+        doc.text(110, 50, "Tanggal Lahir");
+        doc.text(135, 50, ":");
+        doc.text(137, 50, this.peserta.tanggal_lahir);
+  
+        doc.text(110, 75, "Lokasi Pendaftaran");
+        doc.text(135, 75, ":");
+        doc.setFontStyle("bold");
+        doc.text(137, 75, this.info.company);
+  
+        doc.setFontStyle("regular");
+  
+        doc.text(110, 80, "Waktu Pendaftaran");
+        doc.text(135, 80, ":");
+        doc.text(137, 80, this.peserta.waktu_pendaftaran);
+  
+        doc.text(20, 90, this.info.alamat);
+  
+        //Sisi Kiri
+        //doc.text(45, 105, "Panitia,");
+        //doc.text(20, 130, "Operator " + this.info.company);
+  
+        //Sisi Kanan
+        doc.text(127, 100, "Banten,");
+        doc.text(127, 105, "Calon Peserta Didik,");
+        if (this.info.materai) {
+          doc.text(130, 115, "Materai 10000");
+        }
+        doc.text(127, 130, this.peserta.nama);
+  
+        doc.setFontStyle("bold");
+  
+        doc.text(10, 140, "Lembar 1 Untuk Sekolah");
+        doc.setFontStyle("regular");
+        doc.text(
+          10,
+          145,
+          "Informasi PPDB SMK Online 2022 kunjungi " + this.info.apps_url
+        );
+  
+        doc.setLineDash([7, 3, 1, 3], 10);
+        doc.line(10, 150, 200, 150);
+        doc.setLineDash([0], 0);
+  
+        //lembar 2
+        doc.addImage(newLogoProv, "JPEG", 10, 155, 15, 17);
+        doc.setFontSize(10);
+        doc.setFontStyle("bold");
+        doc.text(50, 160, "PEMERINTAH PROVINSI BANTEN");
+        doc.text(40, 165, "DINAS PENDIDIKAAN DAN KEBUDAYAAN");
+  
+        doc.text(125, 160, "BUKTI PENDAFTARAN");
+        doc.setFontStyle("regular");
+        doc.text(125, 165, "PESERTA DIDIK SMK NEGERI");
+        doc.text(125, 170, "TAHUN PELAJARAN 2022/2023");
+        doc.setFontSize(9);
+        doc.setFontStyle("regular");
+        doc.text(30, 170, this.info.alamat);
+        doc.text(75, 31, "Banten");
+        doc.setLineWidth(0.4);
+        doc.line(185, 159, 200, 159);
+        doc.line(185, 163, 200, 163);
+        doc.line(185, 159, 185, 173);
+        doc.line(200, 159, 200, 173);
+        doc.line(185, 173, 200, 173);
+        doc.text(186, 162, "LEMBAR");
+        doc.setFontStyle("bold");
+        doc.setFontSize(15);
+        doc.text(191, 170, "2");
+        doc.setLineWidth(0.4);
+        doc.line(10, 175, 200, 175);
+  
+        //Area Kiri
+  
+        //data peserta
+        doc.setFontSize(9);
+        doc.setFontStyle("regular");
+        doc.text(20, 185, "No. Daftar ");
+        doc.text(50, 185, ":");
+        doc.setFontStyle("bold");
+        doc.text(52, 185, this.peserta.nomor_register);
+        doc.setFontStyle("regular");
+        doc.text(20, 190, "Nama Lengkap");
+        doc.text(50, 190, ":");
+        doc.text(52, 190, this.peserta.nama);
+        doc.text(20, 195, "Asal Sekolah");
+        doc.text(50, 195, ":");
+        doc.text(52, 195, this.peserta.nama_sekolah_asal);
+        doc.text(20, 200, "Daerah Asal");
+        doc.text(50, 200, ":");
+        doc.text(52, 200, this.peserta.daerah_asal);
+  
+        doc.text(20, 215, "Pilihan I");
+        doc.text(50, 215, ":");
+        doc.setFontStyle("bold");
+        doc.text(52, 215, this.peserta.pil1);
+        doc.setFontStyle("regular");
+  
+        doc.text(20, 220, "Pilihan II");
+        doc.text(50, 220, ":");
+        doc.setFontStyle("bold");
+        if (this.peserta.pil2) {
+          doc.text(52, 220, this.peserta.pil2);
+        }
+  
+        doc.setFontStyle("regular");
+        doc.text(110, 185, "Jenis Kelamin");
+        doc.text(135, 185, ":");
+        doc.text(
+          137,
+          185,
+          this.peserta.jenis_kelamin == "L" ? "Laki-laki" : "Perempuan"
+        );
+  
+        doc.text(110, 190, "Tanggal Lahir");
+        doc.text(135, 190, ":");
+        doc.text(137, 190, this.peserta.tanggal_lahir);
+  
+        doc.text(110, 215, "Lokasi Pendaftaran");
+        doc.text(135, 215, ":");
+        doc.setFontStyle("bold");
+        doc.text(137, 215, this.info.company);
+  
+        doc.setFontStyle("regular");
+  
+        doc.text(110, 220, "Waktu Pendaftaran");
+        doc.text(135, 220, ":");
+        doc.text(137, 220, this.peserta.waktu_pendaftaran);
+  
+        doc.text(
+          20,
+          230,
+          "Saya telah mengisi data di atas dengan benar dan siap untuk didiskualifikasi jika terbukti terdapat kecurangan atau rekayasa data"
+        );
+  
+        //Sisi Kiri
+        //doc.text(45, 245, "Panitia,");
+        //doc.text(20, 270, "Operator " + this.info.company);
+  
+        //Sisi Kanan
+        doc.text(127, 240, "Banten,");
+        doc.text(127, 245, "Calon Peserta Didik,");
+        //doc.text(127, 270, this.peserta.nama);
+        if (this.info.materai) {
+          doc.text(130, 260, "Materai 10000");
+        }
+        doc.text(127, 275, this.peserta.nama);
+  
+        doc.setFontStyle("bold");
+  
+        doc.text(10, 285, "Lembar 2 Untuk Calon Siswa");
+        doc.setFontStyle("regular");
+        doc.text(
+          10,
+          290,
+          "Informasi PPDB SMK Online 2022 kunjungi " + this.info.apps_url
+        );
+        */
 
       doc.save(this.record.nopend + ".pdf");
     },
@@ -667,8 +669,8 @@ export default {
   watch: {},
 };
 </script>
-
-<style>
+  
+  <style>
 .v-application .justify-center {
   justify-content: center !important;
   text-align: center;
