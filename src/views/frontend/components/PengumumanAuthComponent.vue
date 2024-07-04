@@ -606,7 +606,7 @@ export default {
       doc.text("Ditetapkan di", 130, 260);
       doc.text(": Tigaraksa ", 160, 260);
       doc.text("Pada Tanggal", 130, 265);
-      doc.text(": 01 Juli 2024 ", 160, 265);
+      doc.text(": 05 Juli 2024 ", 160, 265);
       doc.addImage(ttd, "JPEG", 129, 272, 25, 25);
 
       doc.setFontStyle("bold");
