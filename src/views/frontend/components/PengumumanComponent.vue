@@ -294,15 +294,11 @@ export default {
       doc.setFontStyle("bold");
       doc.text("Surat Keputusan", 85, 65);
       doc.text(65, 70, "Kepala SMP Negeri 2 Tigaraksa");
-      doc.text(60, 75, "Nomor : 421.3/Kep/071/VII/SMPN2-TGRS/2024");
+      doc.text(60, 75, "Nomor : 421.3/Kep/175/VII/SMPN2-TGRS/2025");
       doc.text("Tentang", 95, 80);
       doc.text(53, 85, "Hasil Seleksi Penerimaan Peserta Didik Baru (PPDB)");
-      doc.text(
-        50,
-        90,
-        "Jalur Zonasi, Afirmasi, dan Perpindahan Tugas Orang Tua "
-      );
-      doc.text(80, 95, "Tahun Pelajaran 2024/2025");
+      doc.text(50, 90, "Jalur Domisili, Afirmasi, Mutasi, dan Prestasi");
+      doc.text(80, 95, "Tahun Ajaran 2025/2026");
       doc.setFontStyle("regular");
       doc.text(75, 110, "Kepala SMP Negeri 2 Tigaraksa");
       doc.setFontStyle("bold");
@@ -329,26 +325,30 @@ export default {
         135
       );
       doc.text(
-        "Penerimaan Peserta Didik Baru (PPDB) Jalur Zonasi, Afirmasi dan Perpindahan Tugas Orang ",
+        "Penerimaan Peserta Didik Baru (PPDB) Jalur Domisili, Afirmasi, Mutasi, dan Prestasi ",
         54,
         140
       );
-      doc.text("Tahun Pelajaran 2024/2025.", 54, 145);
+      doc.text("Tahun Ajaran 2025/2026.", 54, 145);
 
       doc.setFontStyle("bold");
       doc.text("Mengingat :", 15, 155);
       doc.setFontStyle("regular");
       doc.text(
-        "Rapat Pleno Seleksi Penetapan Penerimaan Peserta Didik Baru (PPDB) Jalur Zonasi,",
+        "Rapat Pleno Seleksi Sistem Penerimaan Siswa Baru (SPMB) Jalur Domisili, Afirmasi, Mutasi, ",
         50,
         155
       );
       doc.text(
-        "Afirmasi dan Perpindahan Tugas Orang Tua  di SMP Negeri 2 Tigaraksa",
+        "dan Prestasi (Akademik dan Non Akademik) Tahun  Ajaran 2025/2026 di  SMP Negeri 2 ",
         50,
         160
       );
-      doc.text(" yang dilaksanakan pada tanggal 28 Juni 2024.", 50, 165);
+      doc.text(
+        " Tigaraksa yang dilaksanakan pada Tanggal 3 Juli 2025.",
+        50,
+        165
+      );
 
       doc.setFontStyle("bold");
       doc.text("Memutuskan", 50, 175);
@@ -390,11 +390,11 @@ export default {
       doc.text(
         "Sebagai Peserta Didik Baru kelas " +
           this.record.kelas +
-          " di SMP Negeri 2 Tigaraksa Tahun Pelajaran",
+          " di SMP Negeri 2 Tigaraksa Tahun Ajaran",
         50,
         235
       );
-      doc.text("2024/2025. ", 50, 240);
+      doc.text("2025/2026. ", 50, 240);
 
       doc.text(
         "Surat Keputusan ini di putuskan pada tanggal ditetapkan.",
@@ -405,16 +405,16 @@ export default {
       doc.text("Ditetapkan di", 130, 260);
       doc.text(": Tigaraksa ", 160, 260);
       doc.text("Pada Tanggal", 130, 265);
-      doc.text(": 01 Juli 2024 ", 160, 265);
+      doc.text(": 04 Juli 2025 ", 160, 265);
       doc.addImage(ttd, "JPEG", 129, 272, 25, 25);
 
       doc.setFontStyle("bold");
 
       doc.text("Plt. Kepala Sekolah,", 130, 270);
-      doc.text("JARKASIH, S.Pd", 130, 300);
+      doc.text("Drs.KENEDI", 130, 300);
       doc.setFontStyle("regular");
-      doc.text("Pembina Utama Muda, IV/c", 130, 305);
-      doc.text("NIP. 196411281988031010", 130, 310);
+      doc.text("Pembina Tk. I, IV/b", 130, 305);
+      doc.text("NIP. 1967070819999031001", 130, 310);
 
       doc.text("Catatan :", 15, 320);
       doc.setFontStyle("regular");
@@ -426,7 +426,7 @@ export default {
         325
       );
       doc.text(
-        "2. Waktu pelaksanaan lapor diri/daftar ulang, tanggl 08-10 Juli 2024, mulai pk. 08.00 s.d 14.00 di SMP Negeri 2 Tigaraksa;",
+        "2.	Waktu pelaksanaan lapor diri/daftar ulang, tanggl 7 s.d 9 Juli 2025, mulai pk. 08.00 s.d 14.00 di  SMP Negeri 2 Tigaraksa;",
         15,
         330
       );
