@@ -114,7 +114,7 @@
                 color="blue"
                 class="white--text elevation-5"
                 outlined
-                @click="printBuktiPendaftaranPrestasi"
+                @click="printBuktiPendaftaran"
               >Cetak Bukti
                 <v-icon class="ml-4">mdi-printer</v-icon>
               </v-btn>
