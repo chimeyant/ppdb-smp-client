@@ -377,7 +377,7 @@ export default {
       doc.text(this.record.jalur, 105, 215);
       doc.text(
         this.record.jalur == "Zonasi" ? this.record.jarak : "-",
-        105,
+        106,
         218
       );
       doc.text("Dinyatakan", 50, 225);
@@ -428,7 +428,7 @@ export default {
         325
       );
       doc.text(
-        "2.	Waktu pelaksanaan lapor diri/daftar ulang, tanggl 7 s.d 9 Juli 2025, mulai pk. 08.00 s.d 14.00 di  SMP Negeri 2 Tigaraksa;",
+        "2. Waktu pelaksanaan lapor diri/daftar ulang, tanggl 7 s.d 9 Juli 2025, mulai pk. 08.00 s.d 14.00 di  SMP Negeri 2 Tigaraksa;",
         15,
         330
       );
